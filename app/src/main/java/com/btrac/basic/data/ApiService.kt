@@ -33,6 +33,7 @@ interface ApiService {
             level = LogLevel.ALL
           }
           // JSON
+          // install(ContentNegotiation) {}
           install(JsonFeature) {
             serializer = KotlinxSerializer(json)
             // or
