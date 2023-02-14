@@ -1,25 +1,19 @@
 package com.btrac.basic.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import com.btrac.basic.data.ApiService
 import com.btrac.basic.databinding.ActivityHomeBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class HomeActivity : AppCompatActivity() {
 
   private lateinit var binding: ActivityHomeBinding
   private lateinit var productAdapter: ProductListAdapter
   private lateinit var layoutManager: LayoutManager
-
-  private val apiService by lazy {
-    ApiService.create()
-  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -37,12 +31,12 @@ class HomeActivity : AppCompatActivity() {
       adapter = productAdapter
     }
 
-    // lifecycleScope.launch(Dispatchers.IO) {
-    //   val products = apiService.getProducts()
-    //
-    //   launch(Dispatchers.Main) {
-    //     productAdapter.addDataToList(products)
-    //   }
+    // val viewModel: HomeViewModel = getViewModel()
+
+    // viewModel.getHomeData()
+
+    // viewModel.homeDataList.observe(this) { response_ ->
+    //   Log.d("home_screen", "$response_")
     // }
   }
 }
