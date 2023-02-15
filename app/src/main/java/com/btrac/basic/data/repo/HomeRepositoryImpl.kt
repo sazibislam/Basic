@@ -2,7 +2,7 @@ package com.btrac.basic.data.repo
 
 import com.btrac.basic.data.ResponseResource
 import com.btrac.basic.data.pref.Prefs
-import com.btrac.basic.data.response.DummyResponse
+import com.btrac.basic.data.response.DummyResponse2
 import com.btrac.basic.data.source.HomeRemote
 import com.btrac.basic.domain.repository.HomeRepository
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +13,7 @@ class HomeRepositoryImpl(
   private val sessionPrefs: Prefs
 ) : HomeRepository {
 
-  override suspend fun getHomeData(): Flow<ResponseResource<DummyResponse>> =
+  override suspend fun getHomeData(): Flow<ResponseResource<DummyResponse2>> =
     flow {
       val responseResource =
         when (val response = remote.getHomeList()) {

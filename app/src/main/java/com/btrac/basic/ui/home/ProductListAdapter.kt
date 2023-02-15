@@ -3,11 +3,12 @@ package com.btrac.basic.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.btrac.basic.data.response.DummyResponse2
 import com.btrac.basic.data.response.ResponseModel
 import com.btrac.basic.databinding.RowViewProductBinding
 import com.btrac.basic.ui.BaseViewHolder
 
-class ProductListAdapter(private val data: MutableList<ResponseModel> = ArrayList()) :
+class ProductListAdapter(private val data: MutableList<DummyResponse2.Result> = ArrayList()) :
   RecyclerView.Adapter<BaseViewHolder>() {
 
   override fun getItemCount() = data.size
@@ -28,7 +29,7 @@ class ProductListAdapter(private val data: MutableList<ResponseModel> = ArrayLis
     )
   )
 
-  internal fun addDataToList(data: List<ResponseModel>) {
+  internal fun addDataToList(data: List<DummyResponse2.Result>) {
     this.data.clear()
     this.data.addAll(data)
     notifyDataSetChanged()
@@ -47,7 +48,7 @@ class ProductListAdapter(private val data: MutableList<ResponseModel> = ArrayLis
 
       val model = data[position]
       binding.apply {
-        tvTitle.text = model.title
+        tvTitle.text = model.category
 
       }
     }

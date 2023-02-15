@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.btrac.basic.data.ResponseResource
 import com.btrac.basic.data.pref.Prefs
-import com.btrac.basic.data.response.DummyResponse
+import com.btrac.basic.data.response.DummyResponse2
 import com.btrac.basic.domain.repository.HomeRepository
 import kotlinx.coroutines.launch
 
@@ -15,7 +15,7 @@ class HomeViewModel(
   private val sessionPrefs: Prefs
 ) : ViewModel() {
 
-  val homeDataList = MutableLiveData<DummyResponse?>()
+  val homeDataList = MutableLiveData<List<DummyResponse2.Result>?>()
 
   init {
     getHomeData()
@@ -30,8 +30,8 @@ class HomeViewModel(
             Log.d("HomeViewModel", "Some error happened ${it.errorMessage}")
           }
           is ResponseResource.Success -> {
-            homeDataList.postValue(it.data)
-            Log.d("HomeViewModel", "${it.data.size}")
+            homeDataList.postValue(it.data.results)
+            Log.d("HomeViewModel", "${it.data}")
           }
         }
       }

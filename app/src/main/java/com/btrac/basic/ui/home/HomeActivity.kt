@@ -34,6 +34,9 @@ class HomeActivity : AppCompatActivity() {
     }
 
     viewModel.homeDataList.observe(this) { response_ ->
+      response_?.let {
+        productAdapter.addDataToList(it)
+      }
       Log.d("home_screen", "$response_")
     }
   }
