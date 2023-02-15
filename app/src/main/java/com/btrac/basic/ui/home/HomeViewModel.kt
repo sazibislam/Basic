@@ -17,17 +17,17 @@ class HomeViewModel(
 
   val homeDataList = MutableLiveData<DummyResponse?>()
 
-  // init {
-  //   getHomeData()
-  // }
+  init {
+    getHomeData()
+  }
 
-  fun getHomeData() {
+  private fun getHomeData() {
     viewModelScope.launch {
 
       repository.getHomeData().collect {
         when (it) {
           is ResponseResource.Error -> {
-            Log.d("HomeViewModel", "Some error happened")
+            Log.d("HomeViewModel", "Some error happened ${it.errorMessage}")
           }
           is ResponseResource.Success -> {
             homeDataList.postValue(it.data)

@@ -1,5 +1,6 @@
 package com.btrac.basic.data.source
 
+import android.util.Log
 import com.btrac.basic.data.ApiRoutes.ENDPOINT_PRODUCTS
 import com.btrac.basic.data.ResponseResource
 import com.btrac.basic.data.response.DummyResponse
@@ -22,6 +23,7 @@ class HomeRemoteImpl(private val client: HttpClient) : HomeRemote {
       //   else -> ResponseResource.success(response)
       // }
     } catch (e: Exception) {
+      Log.d("Home Remote Exception", "${e.message}")
       ResponseResource.error(DummyResponse())
     }
   }

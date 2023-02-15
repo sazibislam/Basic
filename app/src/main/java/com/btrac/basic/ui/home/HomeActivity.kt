@@ -7,13 +7,15 @@ import androidx.core.view.WindowCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.btrac.basic.databinding.ActivityHomeBinding
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
   private lateinit var binding: ActivityHomeBinding
   private lateinit var productAdapter: ProductListAdapter
   private lateinit var layoutManager: LayoutManager
+
+  private val viewModel: HomeViewModel by viewModel()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -31,12 +33,8 @@ class HomeActivity : AppCompatActivity() {
       adapter = productAdapter
     }
 
-    // val viewModel: HomeViewModel = getViewModel()
-
-    // viewModel.getHomeData()
-
-    // viewModel.homeDataList.observe(this) { response_ ->
-    //   Log.d("home_screen", "$response_")
-    // }
+    viewModel.homeDataList.observe(this) { response_ ->
+      Log.d("home_screen", "$response_")
+    }
   }
 }

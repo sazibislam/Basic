@@ -60,8 +60,6 @@ dependencies {
 
   // Koin for Android
   implementation "io.insert-koin:koin-android:$koin_version"
-  // Jetpack Compose
-  implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
   // Ktor for Android
   implementation 'io.ktor:ktor-client-core:2.1.2'
