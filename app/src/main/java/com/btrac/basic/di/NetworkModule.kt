@@ -1,9 +1,9 @@
 package com.btrac.basic.di
 
-import com.btrac.basic.data.source.AuthRemote
-import com.btrac.basic.data.source.AuthRemoteImpl
-import com.btrac.basic.data.source.HomeRemoteImpl
-import com.btrac.basic.data.source.HomeRemote
+import com.btrac.basic.data.remote.source.AuthRemote
+import com.btrac.basic.data.remote.source.AuthRemoteImpl
+import com.btrac.basic.data.remote.source.HomeRemoteImpl
+import com.btrac.basic.data.remote.source.HomeRemote
 import org.koin.dsl.module
 
 /**

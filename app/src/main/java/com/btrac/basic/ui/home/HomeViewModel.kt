@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.btrac.basic.data.ResponseResource
 import com.btrac.basic.data.pref.Prefs
-import com.btrac.basic.data.response.DummyResponse2
+import com.btrac.basic.data.remote.response.DummyResponse2
 import com.btrac.basic.domain.repository.HomeRepository
 import kotlinx.coroutines.launch
 
@@ -24,13 +24,24 @@ class HomeViewModel(
   private fun getHomeData() {
     viewModelScope.launch {
 
-      repository.getHomeData().collect {
+/*      repository.getHomeData().collect {
         when (it) {
           is ResponseResource.Error -> {
             Log.d("HomeViewModel", "Some error happened ${it.errorMessage}")
           }
           is ResponseResource.Success -> {
             homeDataList.postValue(it.data.results)
+            Log.d("HomeViewModel", "${it.data}")
+          }
+        }
+      }*/
+
+      repository.getUserListData().collect {
+        when (it) {
+          is ResponseResource.Error -> {
+            Log.d("HomeViewModel", "Some error happened ${it.errorMessage}")
+          }
+          is ResponseResource.Success -> {
             Log.d("HomeViewModel", "${it.data}")
           }
         }

@@ -1,4 +1,4 @@
-package com.btrac.basic.data.source
+package com.btrac.basic.data.remote.source
 
 import io.ktor.client.*
 import io.ktor.client.call.*

@@ -1,9 +1,11 @@
-package com.btrac.basic.data.source
+package com.btrac.basic.data.remote.source
 
 import android.util.Log
 import com.btrac.basic.data.ApiRoutes.ENDPOINT_PRODUCTS
+import com.btrac.basic.data.ApiRoutes.ENDPOINT_USER
 import com.btrac.basic.data.ResponseResource
-import com.btrac.basic.data.response.DummyResponse2
+import com.btrac.basic.data.remote.response.DummyResponse2
+import com.btrac.basic.data.remote.response.DummyUserResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -25,6 +27,17 @@ class HomeRemoteImpl(private val client: HttpClient) : HomeRemote {
     } catch (e: Exception) {
       Log.d("HomeRemoteImpl", "${e.message}")
       ResponseResource.error(DummyResponse2())
+    }
+  }
+
+  override suspend fun getUserList(): ResponseResource<ArrayList<DummyUserResponse>> {
+    return try {
+      val response = client.get(ENDPOINT_USER) {
+      }.body<ArrayList<DummyUserResponse>>()
+      ResponseResource.success(response)
+    } catch (e: Exception) {
+      Log.d("Exception", "${e.message}")
+      ResponseResource.error(ArrayList())
     }
   }
 }

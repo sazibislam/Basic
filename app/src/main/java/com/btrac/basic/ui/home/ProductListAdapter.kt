@@ -3,7 +3,7 @@ package com.btrac.basic.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.btrac.basic.data.response.DummyResponse2
+import com.btrac.basic.data.remote.response.DummyResponse2
 import com.btrac.basic.databinding.RowViewProductBinding
 import com.btrac.basic.ui.BaseViewHolder
 

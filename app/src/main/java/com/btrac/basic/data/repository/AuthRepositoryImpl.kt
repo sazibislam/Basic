@@ -1,6 +1,6 @@
-package com.btrac.basic.data.repo
+package com.btrac.basic.data.repository
 
-import com.btrac.basic.data.source.AuthRemote
+import com.btrac.basic.data.remote.source.AuthRemote
 import com.btrac.basic.domain.repository.AuthRepository
 
 class AuthRepositoryImpl(private val remote: AuthRemote) : AuthRepository {

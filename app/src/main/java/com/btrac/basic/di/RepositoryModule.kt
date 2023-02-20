@@ -1,7 +1,7 @@
 package com.btrac.basic.di
 
-import com.btrac.basic.data.repo.AuthRepositoryImpl
-import com.btrac.basic.data.repo.HomeRepositoryImpl
+import com.btrac.basic.data.repository.AuthRepositoryImpl
+import com.btrac.basic.data.repository.HomeRepositoryImpl
 import com.btrac.basic.domain.repository.AuthRepository
 import com.btrac.basic.domain.repository.HomeRepository
 import org.koin.dsl.module

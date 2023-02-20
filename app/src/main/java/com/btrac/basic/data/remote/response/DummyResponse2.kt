@@ -1,4 +1,4 @@
-package com.btrac.basic.data.response
+package com.btrac.basic.data.remote.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

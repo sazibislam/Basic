@@ -1,4 +1,4 @@
-package com.btrac.basic.data.source
+package com.btrac.basic.data.remote.source
 
 interface AuthRemote {
     // suspend fun login(request: LoginRequestDto): ResponseResource<LoginResponseDto>
