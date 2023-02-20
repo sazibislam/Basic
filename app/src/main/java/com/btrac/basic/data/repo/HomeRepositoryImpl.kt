@@ -15,11 +15,10 @@ class HomeRepositoryImpl(
 
   override suspend fun getHomeData(): Flow<ResponseResource<DummyResponse2>> =
     flow {
-      val responseResource =
-        when (val response = remote.getHomeList()) {
-          is ResponseResource.Error -> ResponseResource.error(response.errorMessage)
-          is ResponseResource.Success -> ResponseResource.success(response.data)
-        }
+      val responseResource = when (val response = remote.getHomeList()) {
+        is ResponseResource.Error -> ResponseResource.error(response.errorMessage)
+        is ResponseResource.Success -> ResponseResource.success(response.data)
+      }
       emit(responseResource)
     }
 }
