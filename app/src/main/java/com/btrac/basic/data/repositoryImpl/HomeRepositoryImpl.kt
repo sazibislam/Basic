@@ -1,4 +1,4 @@
-package com.btrac.basic.data.repository
+package com.btrac.basic.data.repositoryImpl
 
 import com.btrac.basic.data.ResponseResource
 import com.btrac.basic.data.pref.Prefs

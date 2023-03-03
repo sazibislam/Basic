@@ -1,4 +1,4 @@
-package com.btrac.basic.data.repository
+package com.btrac.basic.data.repositoryImpl
 
 import com.btrac.basic.data.remote.source.AuthRemote
 import com.btrac.basic.domain.repository.AuthRepository
