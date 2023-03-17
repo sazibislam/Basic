@@ -22,8 +22,8 @@ class HomeViewModel(
   val userDataList = MutableLiveData<State<List<Result>>>()
 
   init {
-    // getHomeData()
-    getUserdata()
+    getHomeData()
+    // getUserdata()
   }
 
   private fun getUserdata() {
